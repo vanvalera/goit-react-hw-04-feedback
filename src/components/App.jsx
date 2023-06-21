@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import { FeedbackOptions } from './Feedback/FeedbackOptions';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
@@ -14,15 +14,15 @@ export default function App() {
  const handleFeedback = option => {
   switch( option) {
     case 'good': 
-    setGood(pG => pG +1);
+    setGood(prevGood => prevGood +1);
     break;  
 
     case 'neutral': 
-    setNeutral(pN => pN +1);
+    setNeutral(prevNeutral => prevNeutral +1);
     break;
 
     case 'bad':
-      setBad(pB => pB +1 );
+      setBad(prevBad => prevBad +1 );
       break;
 
       default:
